@@ -1,0 +1,23 @@
+@import url("recommendReset.css");
+
+:root {
+  --background-color: #5b2386;
+  --text-color: #333333;
+  --accent-color: #0066cc;
+  --bacground-button: #fcee21;
+}
+
+html {
+  font-size: 10px;
+}
+
+body {
+  font-family: GmarketSansMedium, Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans",
+    "Helvetica Neue", sans-serif;
+  line-height: 100%;
+  color: #ffffff;
+  font-size: 1.6rem;
+  margin: auto 0;
+  padding: 36px 0;
+  background-color: var(--background-color);
+}
