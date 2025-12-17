@@ -13,8 +13,7 @@ html {
 }
 
 body {
-  font-family: SpokaHanSansNeo, Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans",
-    "Helvetica Neue", sans-serif;
+  font-family: SpokaHanSansNeo, Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans","Helvetica Neue", sans-serif;
   color: var(--text-color);
   font-size: 1.6rem;
   background-color: var(--background-color);
@@ -25,26 +24,33 @@ body {
   vertical-align: middle;
 }
 
+/* === 공통 컨테이너 === */
+.container {
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
 /* header section */
 header {
+  padding: 25px 0;
+  background-color: var(--primary-color);
+}
+.header-container {
+  height: 102px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 102px;
-  width: 100%;
-  min-width: 1280px;
-  padding: 25px 320px;
-  background-color: var(--primary-color);
 }
-.logo {
+.header-container .logo {
   width: 130px;
   aspect-ratio: 130/40;
 }
-nav ul li {
+.header-container nav ul li {
   display: inline-block;
   margin-right: 30px;
 }
-nav ul li:last-child {
+.header-container nav ul li:last-child {
   margin-left: 10px;
   margin-right: 0px;
 }
@@ -62,7 +68,7 @@ nav ul li:last-child {
 
 /* main section */
 main {
-  margin: 0 auto;
+  position: relative;
 }
 
 .bolds {
@@ -160,6 +166,7 @@ strong {
 
 .bottom-content {
   margin: auto;
+  margin-bottom: 110px;
   gap: 70px;
   width: 940px;
 }
@@ -171,6 +178,194 @@ strong {
 }
 .bottom-content a {
   margin: 0 auto;
+}
+
+/* === Subscribe 섹션 === */
+.subscribe-section {
+  position: absolute;
+  bottom: -100px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+}
+
+.subscribe-container {
+  width: 1280px;
+  height: 200px;
+  background-color: var(--button-bacground);
+  border-radius: 30px;
+  padding: 0 80px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: white;
+}
+
+.subscribe-text {
+  flex: 1;
+  max-width: 500px;
+}
+
+.subscribe-text h3 {
+  font-size: 2.4rem;
+  font-weight: 700;
+  margin-bottom: 15px;
+}
+
+.subscribe-text p {
+  font-size: 1.4rem;
+  line-height: 1.6;
+  opacity: 0.9;
+}
+
+.subscribe-form {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background-color: white;
+  border-radius: 30px;
+  padding: 5px 5px 5px 25px;
+  min-width: 450px;
+}
+
+.subscribe-form input[type="email"] {
+  flex: 1;
+  border: none;
+  outline: none;
+  font-size: 1.4rem;
+  background: transparent;
+}
+
+.subscribe-form input[type="email"]::placeholder {
+  color: #999;
+}
+
+.subscribe-btn {
+  background-color: var(--button-color);
+  color: white;
+  padding: 15px 35px;
+  border: none;
+  border-radius: 25px;
+  font-size: 1.6rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: opacity 0.3s;
+  white-space: nowrap;
+}
+
+.subscribe-btn:hover {
+  opacity: 0.9;
+}
+
+/* === 모달 === */
+.subscribe-modal {
+  border: none;
+  border-radius: 30px;
+  padding: 0;
+  max-width: 600px;
+  width: 90%;
+  box-shadow: 0 10px 50px rgba(0, 0, 0, 0.3);
+}
+
+.subscribe-modal::backdrop {
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+.modal-content {
+  position: relative;
+  padding: 60px 40px;
+  text-align: center;
+  background: linear-gradient(135deg, #f5f0e8 0%, #ede4d8 100%);
+  border-radius: 30px;
+  overflow: hidden;
+}
+
+/* 배경 장식들 */
+.modal-content::before,
+.modal-content::after {
+  content: '';
+  position: absolute;
+  border-radius: 50%;
+}
+
+.modal-content::before {
+  width: 80px;
+  height: 80px;
+  background-color: #e8956f;
+  opacity: 0.6;
+  top: 30px;
+  left: 40px;
+  border: 12px solid #e8956f;
+  background: transparent;
+}
+
+.modal-content::after {
+  width: 60px;
+  height: 60px;
+  background-color: #5f9bd9;
+  opacity: 0.7;
+  bottom: 40px;
+  right: 50px;
+}
+
+.modal-cat {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 25px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.modal-content h2 {
+  font-size: 4rem;
+  font-weight: 700;
+  color: var(--button-color);
+  margin-bottom: 20px;
+}
+
+.modal-content p {
+  font-size: 1.6rem;
+  color: #333;
+  margin-bottom: 35px;
+  line-height: 1.6;
+}
+
+.modal-btn {
+  background-color: var(--button-color);
+  color: white;
+  padding: 18px 50px;
+  border: none;
+  border-radius: 30px;
+  font-size: 1.8rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+  box-shadow: 0 5px 15px rgba(217, 118, 82, 0.3);
+}
+
+.modal-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(217, 118, 82, 0.4);
+}
+
+.modal-btn:active {
+  transform: translateY(0);
+}
+
+/* === 푸터 === */
+footer {
+  background-color: white;
+  padding: 150px 0 50px 0;
+}
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.sns-links {
+  display: flex;
+  gap: 20px;
 }
 
 /* --- 📱 모바일 반응형 (768px 이하) --- */

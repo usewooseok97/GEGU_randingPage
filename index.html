@@ -11,32 +11,34 @@
     />
     <meta property="og:image" content="" />
     <meta name="editor" />
-    <title>1만 시간의 법칙</title>
+    <title>고양이hodu 소개</title>
     <link rel="stylesheet" href="./css/랜딩페이지.css" />
   </head>
   <body>
     <header id="#TOP">
       <h1 class="sr-only">고양이hodu 소개 페이지</h1>
-      <img
-        class="logo"
-        src="./asset/고양이/logo.png"
-        alt="고양이hodu의 사이트 로고"
-      />
-      <nav>
-        <ul>
-          <li><a href="랜딩페이지.html">Home</a></li>
-          <li><a href="">About</a></li>
-          <li><a href="">Support</a></li>
-          <li>
-            <a
-              class="downloadbtn"
-              href=""
-              download="./asset/고양이/cat-boxhat.png"
-              >Download</a
-            >
-          </li>
-        </ul>
-      </nav>
+      <div class="container header-container">
+        <img
+          class="logo"
+          src="./asset/고양이/logo.png"
+          alt="고양이hodu의 사이트 로고"
+        />
+        <nav>
+          <ul>
+            <li><a href="랜딩페이지.html">Home</a></li>
+            <li><a href="">About</a></li>
+            <li><a href="">Support</a></li>
+            <li>
+              <a
+                class="downloadbtn"
+                href=""
+                download="./asset/고양이/cat-boxhat.png"
+                >Download</a
+              >
+            </li>
+          </ul>
+        </nav>
+      </div>
     </header>
     <main>
       <section class="section1">
@@ -101,33 +103,71 @@
           <a href="#" class="downloadbtn">Learn More</a>
         </div>
       </section>
-      <article>
-        <h3>Subscribe to our Blog post</h3>
-        <p>
-          Lorem Ipsum is simply dummy text of the printing and typesetting
-          industry. Lorem Ipsum has been the industry's standard dummy text
-        </p>
-        <input type="email" />
-        <a href="">Subscribe</a>
+      <article class="subscribe-section">
+        <div class="subscribe-container">
+          <div class="subscribe-text">
+            <h3>Subscribe to our Blog post</h3>
+            <p>
+              Lorem Ipsum is simply dummy text of the printing and typesetting
+              industry. Lorem Ipsum has been the industry's standard dummy text
+            </p>
+          </div>
+          <div class="subscribe-form">
+            <input type="email" placeholder="Enter your e-mail address" />
+            <button type="button" class="subscribe-btn">Subscribe</button>
+          </div>
+        </div>
       </article>
       <section>
         <a href="#TOP"></a>
       </section>
     </main>
+
+    <!-- 모달 -->
+    <dialog id="subscribeModal" class="subscribe-modal">
+      <div class="modal-content">
+        <img src="./asset/고양이/logo.png" alt="고양이 hodu" class="modal-cat" />
+        <h2>Thank you!</h2>
+        <p>Lorem Ipsum is simply dummy text of the printing industry.</p>
+        <button type="button" class="modal-btn">OK! I Love HODU</button>
+      </div>
+    </dialog>
+
     <footer>
       <h2 class="sr-only">footer</h2>
-      <img
-        class="logo"
-        src="./asset/고양이/logo.png"
-        alt="고양이hodu의 사이트 로고"
-      />
-      <a
-        href="https://section.blog.naver.com/BlogHome.naver?directoryNo=0&currentPage=1&groupId=0"
-        >블로그</a
-      >
-      <a href="https://www.instagram.com/">인스타</a>
-      <a href="https://www.facebook.com/">페이스북</a>
-      <a href="https://www.youtube.com/">유투브</a>
+      <div class="container footer-container">
+        <img class="logo" src="./asset/고양이/logo.png" alt="로고" />
+        <div class="sns-links">
+          <a href="https://section.blog.naver.com/BlogHome.naver?directoryNo=0&currentPage=1&groupId=0">블로그</a>
+          <a href="https://www.instagram.com/">인스타</a>
+          <a href="https://www.facebook.com/">페북</a>
+          <a href="https://www.youtube.com/">유튜브</a>
+        </div>
+      </div>
     </footer>
+
+    <script>
+      // 모달 열기/닫기 기능
+      const subscribeBtn = document.querySelector('.subscribe-btn');
+      const modal = document.getElementById('subscribeModal');
+      const modalCloseBtn = document.querySelector('.modal-btn');
+
+      // Subscribe 버튼 클릭 시 모달 열기
+      subscribeBtn.addEventListener('click', () => {
+        modal.showModal();
+      });
+
+      // OK 버튼 클릭 시 모달 닫기
+      modalCloseBtn.addEventListener('click', () => {
+        modal.close();
+      });
+
+      // 모달 backdrop(바깥 영역) 클릭 시 닫기
+      modal.addEventListener('click', (e) => {
+        if (e.target === modal) {
+          modal.close();
+        }
+      });
+    </script>
   </body>
 </html>
