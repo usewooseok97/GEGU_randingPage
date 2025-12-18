@@ -345,7 +345,6 @@ strong {
 footer {
   background-color: white;
   display: flex;
-  justify-content: space-between;
   align-items: center;
   max-width: 1280px;
   height: 160px;
@@ -387,4 +386,50 @@ footer {
 /* 스크롤 동작 개선 */
 html {
   scroll-behavior: smooth;
+}
+
+/* === 데스크탑 추가 스타일 === */
+@media (min-width: 570px) {
+  .mobile-break {
+    display: none;
+  }
+
+  .footer-left {
+    display: flex;
+    gap: 20px;
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .footer-left .logo {
+    width: 80px;
+    margin-bottom: 0;
+  }
+
+  .sns-links {
+    display: flex;
+    gap: 20px;
+  }
+
+  .sns-links a {
+    width: 32px;
+    height: 32px;
+  }
+
+  .sns-links a img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+
+  .footer-right {
+    display: none;
+  }
+
+  .footer-right a {
+    color: var(--text-color);
+    text-decoration: none;
+    font-size: 1.4rem;
+    font-weight: 400;
+  }
 }

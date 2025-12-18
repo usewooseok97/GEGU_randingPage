@@ -6,12 +6,6 @@
 .back-to-top {
   display: none;
 }
-/* 데스크톱(PC)에서는 br 태그를 숨겨서 한 줄로 만듦 */
-@media (min-width: 570px) {
-  .mobile-break {
-    display: none;
-  }
-}
 
 /* === Header === */
 header {
