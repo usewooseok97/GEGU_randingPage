@@ -1,11 +1,9 @@
-@import url("recommendReset.css");
-
 :root {
   --background-color: white;
   --primary-color: #f2e9d8;
   --text-color: #000000;
   --button-color: #d97652;
-  --button-bacground: #263140;
+  --button-background: #263140;
 }
 
 html {
@@ -13,23 +11,23 @@ html {
 }
 
 body {
-  font-family: SpokaHanSansNeo, Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans","Helvetica Neue", sans-serif;
+  font-family: "Spoqa Han Sans Neo", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   color: var(--text-color);
   font-size: 1.6rem;
   background-color: var(--background-color);
-  font-family: Spoqa Han Sans Neo;
   font-weight: 400;
   line-height: 22px;
   letter-spacing: 0%;
   vertical-align: middle;
 }
 
-/* === 공통 컨테이너 === */
+
 .container {
   width: 100%;
   max-width: 1280px;
   margin: 0 auto;
 }
+ 
 
 /* header section */
 header {
@@ -41,6 +39,13 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+ 
+.hamburger-btn {
+  display: none;
+}
+.mobile-nav {
+  display: none;
 }
 .header-container .logo {
   width: 130px;
@@ -66,6 +71,19 @@ header {
   border-radius: 40px;
 }
 
+/* 키보드 접근성을 위한 포커스 스타일 */
+a:focus-visible,
+button:focus-visible {
+  outline: 3px solid var(--button-color);
+  outline-offset: 3px;
+}
+
+.downloadbtn:hover,
+.subscribe-btn:hover {
+  opacity: 0.9;
+  transform: translateY(-2px);
+}
+
 /* main section */
 main {
   position: relative;
@@ -77,7 +95,6 @@ main {
   vertical-align: middle;
 }
 .regulars {
-  font-family: Spoqa Han Sans Neo;
   font-weight: 400;
   font-size: 1.6rem;
   letter-spacing: 0%;
@@ -90,6 +107,7 @@ main {
 strong {
   color: var(--button-color);
 }
+
 /* sections section */
 .section1 {
   display: flex;
@@ -136,6 +154,7 @@ strong {
   display: block;
   margin: auto;
   text-align: center;
+  margin-bottom: 300px;
 }
 
 .section3 h2 {
@@ -162,19 +181,19 @@ strong {
   max-width: 380px; 
   object-fit: cover; 
 }
-/* 여기서 부터 시작 float 쪽 질문하기 */
 
 .bottom-content {
-  margin: auto;
-  margin-bottom: 110px;
+  max-width: 940px;
+  width: 90%;
+  margin: 0 auto;
   gap: 70px;
-  width: 940px;
 }
 
 .bottom-content p {
   float: left;
   text-align: left;
-  width: 730px;
+  max-width: 730px;
+  width: 100%;
 }
 .bottom-content a {
   margin: 0 auto;
@@ -183,16 +202,17 @@ strong {
 /* === Subscribe 섹션 === */
 .subscribe-section {
   position: absolute;
-  bottom: -100px;
+  width: 100%;
+  top: -100px;
   left: 50%;
   transform: translateX(-50%);
-  z-index: 10;
 }
 
 .subscribe-container {
-  width: 1280px;
+  max-width: 1280px;
+  margin: 0 auto;
   height: 200px;
-  background-color: var(--button-bacground);
+  background-color: var(--button-background);
   border-radius: 30px;
   padding: 0 80px;
   display: flex;
@@ -226,6 +246,7 @@ strong {
   border-radius: 30px;
   padding: 5px 5px 5px 25px;
   min-width: 450px;
+  margin: 0;
 }
 
 .subscribe-form input[type="email"] {
@@ -253,18 +274,18 @@ strong {
   white-space: nowrap;
 }
 
-.subscribe-btn:hover {
-  opacity: 0.9;
-}
 
 /* === 모달 === */
 .subscribe-modal {
   border: none;
   border-radius: 30px;
   padding: 0;
-  max-width: 600px;
-  width: 90%;
+  margin: auto;
+  width: 600px;
+  height: 400px;
   box-shadow: 0 10px 50px rgba(0, 0, 0, 0.3);
+  background-image: url("../asset/고양이/modal-background\ 1.png");
+  position: relative;
 }
 
 .subscribe-modal::backdrop {
@@ -272,52 +293,19 @@ strong {
 }
 
 .modal-content {
-  position: relative;
-  padding: 60px 40px;
-  text-align: center;
-  background: linear-gradient(135deg, #f5f0e8 0%, #ede4d8 100%);
-  border-radius: 30px;
-  overflow: hidden;
-}
-
-/* 배경 장식들 */
-.modal-content::before,
-.modal-content::after {
-  content: '';
   position: absolute;
-  border-radius: 50%;
-}
-
-.modal-content::before {
-  width: 80px;
-  height: 80px;
-  background-color: #e8956f;
-  opacity: 0.6;
-  top: 30px;
-  left: 40px;
-  border: 12px solid #e8956f;
-  background: transparent;
-}
-
-.modal-content::after {
-  width: 60px;
-  height: 60px;
-  background-color: #5f9bd9;
-  opacity: 0.7;
-  bottom: 40px;
-  right: 50px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
 }
 
 .modal-cat {
-  width: 120px;
-  height: 120px;
-  border-radius: 50%;
-  object-fit: cover;
-  margin-bottom: 25px;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  object-fit: contain;
 }
 
-.modal-content h2 {
+.modal-content strong {
+  display: block;
   font-size: 4rem;
   font-weight: 700;
   color: var(--button-color);
@@ -344,48 +332,59 @@ strong {
   box-shadow: 0 5px 15px rgba(217, 118, 82, 0.3);
 }
 
-.modal-btn:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 8px 20px rgba(217, 118, 82, 0.4);
-}
-
-.modal-btn:active {
-  transform: translateY(0);
+.background {
+  position: relative;
+  background-image: url("../asset/고양이/cat-close.png");
+  background-repeat: no-repeat;
+  object-fit: contain;
+  background-position: center;
+  height: 340px;
 }
 
 /* === 푸터 === */
 footer {
   background-color: white;
-  padding: 150px 0 50px 0;
-}
-.footer-container {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  max-width: 1280px;
+  height: 160px;
+  margin: auto;
 }
+
 .sns-links {
   display: flex;
   gap: 20px;
 }
 
-/* --- 📱 모바일 반응형 (768px 이하) --- */
-@media (max-width: 768px) {
-  /* 이미지 세로 배치 */
-  .gallery-grid {
-    flex-direction: column;
-    align-items: center;
-  }
+/* === 맨 위로 버튼 === */
+.back-to-top {
+  position: fixed;
+  right: 24px;
+  bottom: 24px;
+  width: 60px;
+  height: 60px;
+  background-color: white;
+  background-image: url('../asset/Vector.png');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 24px 24px;
+  border-radius: 50%;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  display: block;
+  z-index: 999;
+  transition: all 0.3s ease;
+  opacity: 0.9;
+}
 
-  /* 하단 텍스트/버튼 세로 배치 */
-  .bottom-content {
-    flex-direction: column;
-    text-align: left;
-    gap: 30px;
-  }
+.back-to-top:hover {
+  opacity: 1;
+  background-image: url('../asset/Vector_hover.png');
+  transform: translateY(-4px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+}
 
-  /* 버튼 꽉 차게 */
-  .btn-primary {
-    width: 100%;
-    text-align: center;
-  }
+/* 스크롤 동작 개선 */
+html {
+  scroll-behavior: smooth;
 }

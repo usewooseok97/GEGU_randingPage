@@ -1,78 +1,105 @@
 <!DOCTYPE html>
 <html lang="ko-KR">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="귀여운 고양이hodu를 소개하는 페이지" />
-    <meta property="og:title" content="귀여운 고양이hodu를 소개합니다" />
+    <meta charset="UTF-8" >
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" >
+    <meta name="description" content="귀여운 고양이hodu를 소개하는 페이지" >
+    <meta property="og:title" content="귀여운 고양이hodu를 소개합니다" >
     <meta
       property="og:description"
       content="귀여운 고양이hodu를 소개하는 페이지"
-    />
-    <meta property="og:image" content="" />
-    <meta name="editor" />
+    >
+    <meta property="og:image" content="./asset/고양이/cat-boxhat.png" >
+    <meta name="author" content="고양이hodu 소개 페이지" >
     <title>고양이hodu 소개</title>
-    <link rel="stylesheet" href="./css/랜딩페이지.css" />
+    <link rel="stylesheet" href="./css/recommendReset.css" >
+    <link rel="stylesheet" href="./css/랜딩페이지.css" >
+    <link rel="stylesheet" href="./css/모바일랜딩페이지.css" media="(max-width: 570px)" >
   </head>
   <body>
-    <header id="#TOP">
+    <header id="TOP">
       <h1 class="sr-only">고양이hodu 소개 페이지</h1>
       <div class="container header-container">
         <img
           class="logo"
           src="./asset/고양이/logo.png"
           alt="고양이hodu의 사이트 로고"
-        />
+        >
         <nav>
           <ul>
             <li><a href="랜딩페이지.html">Home</a></li>
-            <li><a href="">About</a></li>
-            <li><a href="">Support</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#support">Support</a></li>
             <li>
               <a
                 class="downloadbtn"
-                href=""
-                download="./asset/고양이/cat-boxhat.png"
+                href="./asset/고양이/cat-boxhat.png"
+                download
                 >Download</a
               >
             </li>
           </ul>
         </nav>
+        <button type="button" class="hamburger-btn" aria-label="메뉴 열기">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
       </div>
     </header>
+
+    <!-- 모바일 네비게이션 -->
+    <div class="mobile-nav">
+      <button type="button" class="mobile-nav-close" aria-label="메뉴 닫기">
+        >
+      </button>
+      <ul>
+        <li><a href="랜딩페이지.html">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#support">Support</a></li>
+        <li>
+          <a
+            class="downloadbtn"
+            href="./asset/고양이/cat-boxhat.png"
+            download
+            >Download</a
+          >
+        </li>
+      </ul>
+    </div>
     <main>
       <section class="section1">
         <div class="section1-word">
           <h2 class="bolds">
-            Lorem Ipsum is simply<br />
+            Lorem Ipsum is simply<br >
             dummy text of the printing and
           </h2>
           <p class="regulars">
-            Lorem Ipsum is simply dummy text of the printing and<br />
-            typesetting industry.<br />
-            Lorem Ipsum has been the industry's standard dummy text <br />ever
+            Lorem Ipsum is simply dummy text of the printing and<br >
+            typesetting industry.<br >
+            Lorem Ipsum has been the industry's standard dummy text <br >ever
             since the 1500s, when an unknown
           </p>
           <a
             class="downloadbtn"
-            href=""
-            download="./asset/고양이/cat-boxhat.png"
+            href="./asset/고양이/cat-boxhat.png"
+            download
             >Download</a
           >
         </div>
         <img
           src="./asset/고양이/cat-boxhat.png"
           alt="박스를 모자처럼 쓴 고양이hodu"
-        />
+        >
       </section>
       <section class="section2">
         <img class="shadows"
           src="./asset/고양이/cat-onbed.png"
           alt="침대에 누워있는 고양이hodu"
-        />
+        >
         <div class="section2-word">
           <h2 class="bolds">
-            Lorem Ipsum is simply <br />dummy text of the printing <br />and
+            Lorem Ipsum is simply <br >dummy text of the printing <br >and
             dummy text
           </h2>
           <p class="regulars">
@@ -89,9 +116,9 @@
           since the 1500s, when an unknown
         </p>
         <section class="gallery-grid">
-          <img class="shadows" src="./asset/고양이/cat-oncattower.png" alt="cat oncattower" />
-          <img class="shadows" src="./asset/고양이/cat-seewall.png" alt="cat seewall" />
-          <img class="shadows" src="./asset/고양이/cat-seeme.png" alt="cat seeme" />
+          <img class="shadows" src="./asset/고양이/cat-oncattower.png" alt="cat oncattower" >
+          <img class="shadows" src="./asset/고양이/cat-seewall.png" alt="cat seewall" >
+          <img class="shadows" src="./asset/고양이/cat-seeme.png" alt="cat seeme" >
         </section>
         <div class="bottom-content">
           <p class="regulars">
@@ -103,31 +130,40 @@
           <a href="#" class="downloadbtn">Learn More</a>
         </div>
       </section>
-      <article class="subscribe-section">
-        <div class="subscribe-container">
-          <div class="subscribe-text">
-            <h3>Subscribe to our Blog post</h3>
-            <p>
-              Lorem Ipsum is simply dummy text of the printing and typesetting
-              industry. Lorem Ipsum has been the industry's standard dummy text
-            </p>
+      <section class="background">
+        <article class="subscribe-section">
+          <div class="subscribe-container">
+            <div class="subscribe-text">
+              <h3>Subscribe to our<br class="mobile-break"> Blog post</h3>
+              <p>
+                Lorem Ipsum is simply dummy text of the printing and typesetting
+                industry. Lorem Ipsum has been the industry's standard dummy text
+              </p>
+            </div>
+            <form class="subscribe-form">
+              <label for="subscribe-email" class="sr-only">이메일 주소</label>
+              <input
+                type="email"
+                id="subscribe-email"
+                name="email"
+                placeholder="Enter your e-mail address"
+                required
+                aria-required="true"
+              >
+              <button type="submit" class="subscribe-btn">Subscribe</button>
+            </form>
           </div>
-          <div class="subscribe-form">
-            <input type="email" placeholder="Enter your e-mail address" />
-            <button type="button" class="subscribe-btn">Subscribe</button>
-          </div>
-        </div>
-      </article>
-      <section>
-        <a href="#TOP"></a>
+        </article>
       </section>
+      <a href="#TOP" class="back-to-top" aria-label="맨 위로 가기"></a>
     </main>
 
     <!-- 모달 -->
     <dialog id="subscribeModal" class="subscribe-modal">
       <div class="modal-content">
-        <img src="./asset/고양이/logo.png" alt="고양이 hodu" class="modal-cat" />
-        <h2>Thank you!</h2>
+        <h2 class="sr-only">이메일 전송 완료</h2>
+        <img src="./asset/고양이/cat-onlyhead.png" alt="고양이 hodu" class="modal-cat" >
+        <strong>Thank you!</strong>
         <p>Lorem Ipsum is simply dummy text of the printing industry.</p>
         <button type="button" class="modal-btn">OK! I Love HODU</button>
       </div>
@@ -135,15 +171,20 @@
 
     <footer>
       <h2 class="sr-only">footer</h2>
-      <div class="container footer-container">
-        <img class="logo" src="./asset/고양이/logo.png" alt="로고" />
+      <div class="footer-left">
+        <img class="logo" src="./asset/고양이/logo.png" alt="로고">
         <div class="sns-links">
-          <a href="https://section.blog.naver.com/BlogHome.naver?directoryNo=0&currentPage=1&groupId=0">블로그</a>
-          <a href="https://www.instagram.com/">인스타</a>
-          <a href="https://www.facebook.com/">페북</a>
-          <a href="https://www.youtube.com/">유튜브</a>
+          <a href="https://www.instagram.com/"><img class="logo" src="asset/고양이/icon-blog.png" alt="로고"></a>
+          <a href="https://www.facebook.com/"><img class="logo" src="asset/고양이/icon-facebook.png" alt="로고"></a>
+          <a href="https://www.youtube.com/"><img class="logo" src="asset/고양이/icon-insta.png" alt="로고"></a>
+          <a href="https://www.youtube.com/"><img class="logo" src="asset/고양이/icon-youtube.png" alt="로고"></a>
         </div>
       </div>
+      <nav class="footer-right">
+        <a href="#about">About</a>
+        <a href="#support">Support</a>
+        <a href="#blog">Blog</a>
+      </nav>
     </footer>
 
     <script>
@@ -167,6 +208,33 @@
         if (e.target === modal) {
           modal.close();
         }
+      });
+
+      // 모바일 메뉴 열기/닫기 기능
+      const hamburgerBtn = document.querySelector('.hamburger-btn');
+      const mobileNav = document.querySelector('.mobile-nav');
+      const mobileNavClose = document.querySelector('.mobile-nav-close');
+
+      // 햄버거 버튼 클릭 시 메뉴 열기
+      if (hamburgerBtn) {
+        hamburgerBtn.addEventListener('click', () => {
+          mobileNav.classList.add('active');
+        });
+      }
+
+      // 닫기 버튼 클릭 시 메뉴 닫기
+      if (mobileNavClose) {
+        mobileNavClose.addEventListener('click', () => {
+          mobileNav.classList.remove('active');
+        });
+      }
+
+      // 메뉴 링크 클릭 시 메뉴 닫기
+      const mobileNavLinks = document.querySelectorAll('.mobile-nav a');
+      mobileNavLinks.forEach(link => {
+        link.addEventListener('click', () => {
+          mobileNav.classList.remove('active');
+        });
       });
     </script>
   </body>

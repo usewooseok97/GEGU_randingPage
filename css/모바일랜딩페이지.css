@@ -1,0 +1,411 @@
+/* === 공통 컨테이너 === */
+.container {
+  max-width: 100%;
+  padding: 0 20px;
+}
+.back-to-top {
+  display: none;
+}
+/* 데스크톱(PC)에서는 br 태그를 숨겨서 한 줄로 만듦 */
+@media (min-width: 570px) {
+  .mobile-break {
+    display: none;
+  }
+}
+
+/* === Header === */
+header {
+  padding: 20px;
+}
+
+.header-container {
+  height: auto;
+  padding: 0;
+}
+
+.header-container .logo {
+  width: 80px;
+}
+
+.header-container nav {
+  display: none;
+}
+
+/* === 햄버거 버튼 터치 영역 확대 === */
+.hamburger-btn {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 30px;
+  height: 25px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  position: relative;
+  box-sizing: content-box;
+  padding: 10px;
+  margin: -10px;
+}
+
+.hamburger-btn span {
+  width: 100%;
+  height: 3px;
+  background-color: #333;
+  border-radius: 2px;
+  transition: all 0.3s;
+}
+
+.hamburger-btn:hover span {
+  background-color: var(--button-color);
+}
+
+/* === 모바일 네비게이션 개선 === */
+.mobile-nav {
+  display: block;
+  position: fixed;
+  top: 0;
+  right: -100%;
+  width: 80%;
+  max-width: 400px;
+  height: 100vh;
+  background-color: var(--button-background);
+  z-index: 1000;
+  padding: 60px 40px;
+  visibility: hidden;
+  transition: right 0.3s ease-in-out, visibility 0s linear 0.3s;
+}
+
+.mobile-nav.active {
+  right: 0;
+  visibility: visible;
+  transition: right 0.3s ease-in-out, visibility 0s linear 0s;
+}
+
+.mobile-nav-close {
+  position: absolute;
+  top: 30px;
+  left: 30px;
+  background: transparent;
+  border: none;
+  color: white;
+  font-size: 3rem;
+  cursor: pointer;
+  padding: 0;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.mobile-nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  margin-top: 80px;
+}
+
+.mobile-nav ul li {
+  margin: 0;
+}
+
+.mobile-nav ul li a {
+  color: white;
+  font-size: 2rem;
+  text-decoration: none;
+  font-weight: 500;
+  transition: opacity 0.3s;
+}
+
+.mobile-nav ul li a:hover {
+  opacity: 0.8;
+}
+
+.mobile-nav ul li:last-child {
+  margin-top: 20px;
+}
+
+.mobile-nav .downloadbtn {
+  display: inline-block;
+  background-color: var(--button-color);
+  padding: 15px 40px;
+  border-radius: 30px;
+  width: auto;
+  height: auto;
+}
+
+/* === Main Sections === */
+main {
+  padding: 0;
+}
+
+.section1 {
+  flex-direction: column;
+  padding: 32px;
+  margin-bottom: 40px;
+}
+
+.section1-word {
+  order: 1;
+  gap: 20px;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.section1-word h2 {
+  font-size: 2.4rem;
+  line-height: 1.4;
+}
+
+.section1-word p {
+  font-size: 1.4rem;
+}
+
+.section1 img {
+  order: 2;
+  width: 100%;
+  max-width: 300px;
+  margin: 0 auto;
+  border-radius: 20px;
+}
+
+.downloadbtn {
+  width: fit-content;
+  padding: 12px 30px;
+  display: inline-block;
+  text-align: center;
+  margin-left: auto;
+}
+
+.section2 {
+  flex-direction: column;
+  padding: 32px;
+  margin-bottom: 40px;
+}
+
+.section2 img {
+  width: 100%;
+  max-width: 300px;
+  margin: 0 auto 30px;
+  border-radius: 20px;
+}
+
+.section2-word {
+  flex-basis: auto;
+  gap: 20px;
+  text-align: center;
+}
+
+.section2-word h2 {
+  font-size: 2rem;
+  line-height: 1.4;
+}
+
+.section3 {
+  padding: 32px;
+  margin-bottom: 200px;
+}
+
+.section3 h2 {
+  font-size: 2.4rem;
+  line-height: 1.4;
+  margin-bottom: 20px;
+}
+
+.section3 p {
+  font-size: 1.4rem;
+  margin-bottom: 30px;
+}
+
+/* === 갤러리 스크롤 힌트 === */
+.gallery-grid {
+  flex-direction: row;
+  gap: 15px;
+  margin: 40px 0;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  padding: 10px 0 10px 0;
+  margin-left: 0;
+  margin-right: 0;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.gallery-grid::-webkit-scrollbar {
+  display: none;
+}
+
+.gallery-grid img {
+  flex-shrink: 0;
+  width: 280px;
+  height: 200px;
+  border-radius: 20px;
+  scroll-snap-align: center;
+  object-fit: cover;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  margin-right: 15px;
+}
+.gallery-grid img:last-child {
+  margin-right: 0;
+}
+
+.bottom-content {
+  width: 100%;
+  padding: 0;
+  margin-bottom: 60px;
+  text-align: center;
+}
+
+.bottom-content p {
+  float: none;
+  width: 100%;
+  text-align: left;
+  margin-bottom: 20px;
+  font-size: 1.4rem;
+}
+
+.bottom-content a {
+  margin: 0;
+  padding: 12px 30px;
+  float: right;
+}
+
+/* === Subscribe Section === */
+.subscribe-section {
+  position: relative;
+  transform: none;
+  left: auto;
+  bottom: auto;
+  margin-bottom: 40px;
+}
+
+.subscribe-container {
+  width: 90%;
+  height: auto;
+  flex-direction: column;
+  padding: 32px;
+  gap: 25px;
+}
+
+.subscribe-text {
+  max-width: 100%;
+}
+
+.subscribe-text h3 {
+  font-size: 2rem;
+  margin-bottom: 12px;
+}
+
+.subscribe-text p {
+  font-size: 1.3rem;
+}
+
+.subscribe-form {
+  flex-direction: column;
+  min-width: auto;
+  width: 100%;
+  background-color: var(--button-background);
+  padding: 20px;
+  gap: 15px;
+}
+
+.subscribe-form input[type="email"] {
+  width: 100%;
+  padding: 12px 15px;
+  font-size: 1.4rem;
+  border-radius: 60px;
+  background-color: white;
+}
+
+.subscribe-btn {
+  width: fit-content;
+  padding: 12px 20px;
+  font-size: 1.5rem;
+  margin-left: auto;
+}
+
+/* === Footer === */
+footer {
+  padding: 40px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.footer-left {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.footer-left .logo {
+  width: 80px;
+  margin-bottom: 0;
+}
+
+.sns-links {
+  display: flex;
+  gap: 12px;
+}
+
+.sns-links a {
+  width: 32px;
+  height: 32px;
+}
+
+.sns-links a img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.footer-right {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  align-items: flex-end;
+  text-align: right;
+}
+
+.footer-right a {
+  color: var(--text-color);
+  text-decoration: none;
+  font-size: 1.4rem;
+  font-weight: 400;
+}
+
+/* === Modal === */
+.subscribe-modal {
+  max-width: 100%;
+}
+
+.modal-content {
+  padding: 40px 20px;
+}
+
+.modal-cat {
+  width: 100px;
+  height: 100px;
+}
+
+.modal-content h2 {
+  font-size: 3rem;
+}
+
+.modal-content p {
+  font-size: 1.4rem;
+}
+
+.modal-btn {
+  padding: 15px 40px;
+  font-size: 1.6rem;
+}
+
+/* === 그림자 효과 조정 === */
+.shadows {
+  box-shadow: 5px 5px 15px 0px #00000040;
+}
